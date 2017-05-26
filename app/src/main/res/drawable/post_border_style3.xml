@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true"><shape>
+        <solid android:color="#cccccc" />
+    </shape></item>
+    <item><shape>
+        <!-- Color del contorn de cada element de la llista - Es fa un degradat -->
+        <!-- L angle defineix el sentit del degradat -->
+        <gradient android:angle="270" android:endColor="@color/colortRosa2" android:startColor="@color/colortRosa2" />
+        <corners android:radius="2dp" />
+    </shape></item>
+</selector>

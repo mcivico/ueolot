@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "162308005905",
+    "firebase_url": "https://ueolot-44571.firebaseio.com",
+    "project_id": "ueolot-44571",
+    "storage_bucket": "ueolot-44571.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162308005905:android:2dc19bc113d0024a",
+        "android_client_info": {
+          "package_name": "com.ueolot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162308005905-p830q0o1q6fuftrsp66e0a1s61dt1qio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9BlfLTbiLgmOEwbkHALickYJ_95g_TiI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162308005905:android:8dd8514623ee380d",
+        "android_client_info": {
+          "package_name": "ueolot.com.ueolot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162308005905-p830q0o1q6fuftrsp66e0a1s61dt1qio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9BlfLTbiLgmOEwbkHALickYJ_95g_TiI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

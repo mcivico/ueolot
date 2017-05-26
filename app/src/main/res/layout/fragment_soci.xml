@@ -1,0 +1,90 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colortRosa2"
+    tools:context="com.ueolot.Fragments.Fragment_Soci">
+
+
+    <!--RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="FES-TE SOCI!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/txtTitolSoci"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textColor="@color/colortTítols"
+            android:textStyle="bold" />
+
+        <TextView
+            android:text="Informa't als següents números:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:id="@+id/textView2"
+            android:textAlignment="center"
+            android:layout_below="@+id/txtTitolSoci"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorNegre" />
+
+        <TextView
+            android:text="649091044"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/textView8"
+            android:clickable="true"
+            android:textSize="20dp" />
+
+        <TextView
+            android:text="972260998"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView8"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/textView9"
+            android:textSize="20dp" />
+
+        <TextView
+            android:text=" Omplint el formulari de l'enllaç:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView9"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:id="@+id/textView10"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorNegre"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_logo"
+            android:layout_below="@+id/textView10"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/imageView4" />
+
+    </RelativeLayout-->
+    <WebView
+        android:id="@+id/webViewSoci"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

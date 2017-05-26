@@ -1,0 +1,115 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.civico.marc.olot.Fragments.Fragment_Clasificacio">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_container_classificacio"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MergeRootFrame" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/box_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/post_border_background"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal|top">
+
+
+            <LinearLayout
+                android:id="@+id/single_post_circuito_linearbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:layout_weight="0.01">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="POSICIÓ"
+                        android:id="@+id/txtPos"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colortTítols"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:paddingLeft="30dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="EQUIP"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/txtEqu"
+                        android:layout_marginLeft="0dp"
+                        android:textColor="@color/colortTítols"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.10"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="PJ."
+                        android:layout_marginTop="5dp"
+                        android:paddingLeft="8dp"
+                        android:id="@+id/txtPartitsJug"
+                        android:layout_marginLeft="45dp"
+                        android:textColor="@color/colortTítols"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="PUNTS"
+                        android:id="@+id/txtPun"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/colortTítols"
+                        android:textSize="15dp"
+                        android:layout_weight="0.03"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listViewClassificacio"
+            android:divider="@color/colortTítols"
+            android:dividerHeight="1px"
+            android:layout_gravity="center_horizontal|bottom"
+            android:clickable="false" />
+    </LinearLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>
+
+</FrameLayout>

@@ -1,0 +1,244 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ueolot.Fragments.Fragment_Escola">
+
+    <!--ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+
+            <TextView
+                android:text="@string/valorsCompromisos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/txtTitolEscola"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/textView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="Les FCBEscoles treballen amb un model propi, únic, basat en la metodologia Barça, amb un estil de joc creatiu i ofensiu, i amb una indispensable transmissió de valors: respecte, esforç, ambició, treball en equip i humilitat."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDescripcio"
+                android:paddingTop="20dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorNegre"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:text="@string/dadesParticipants_inscripcio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textView2"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/textView"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/nomP_inscripcio"
+                android:ems="10"
+                android:id="@+id/nomP"
+                android:layout_below="@+id/textView2"
+                android:layout_alignLeft="@+id/textView5"
+                android:layout_alignStart="@+id/textView5"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/cognomsP_inscripcio"
+                android:ems="10"
+                android:id="@+id/cognomP"
+                android:layout_below="@+id/nomP"
+                android:layout_alignLeft="@+id/nomP"
+                android:layout_alignStart="@+id/nomP"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="@string/dia_inscripcio"
+                    android:ems="10"
+                    android:id="@+id/diaP"
+                    android:paddingLeft="10dp"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:maxLength="2"
+                    android:layout_weight="0.3" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mes_inscripcio"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/mesP"
+                    android:textSize="16sp"
+                    android:maxLength="2"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.3" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/any_inscripcio"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/anyP"
+                    android:textSize="16sp"
+                    android:maxLength="4"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.3" />
+            </LinearLayout>
+
+            <TextView
+                android:text="@string/dadesContacte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignRight="@+id/textView2"
+                android:layout_alignEnd="@+id/textView2"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:paddingTop="20dp"
+                android:id="@+id/textView5"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/nomC_inscripcio"
+                android:ems="10"
+                android:layout_below="@+id/textView5"
+                android:layout_alignLeft="@+id/textView5"
+                android:layout_alignStart="@+id/textView5"
+                android:paddingTop="20dp"
+                android:id="@+id/nomC"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/mailC_inscripcio"
+                android:ems="10"
+                android:layout_below="@+id/nomC"
+                android:layout_alignLeft="@+id/nomC"
+                android:layout_alignStart="@+id/nomC"
+                android:id="@+id/mailC"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="@string/telfC_inscripcio"
+                android:ems="10"
+                android:layout_below="@+id/mailC"
+                android:layout_alignLeft="@+id/mailC"
+                android:layout_alignStart="@+id/mailC"
+                android:id="@+id/telfC"
+                android:maxLength="9"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/adrecaC_inscripcio"
+                android:ems="10"
+                android:layout_below="@+id/telfC"
+                android:layout_alignLeft="@+id/telfC"
+                android:layout_alignStart="@+id/telfC"
+                android:id="@+id/adrçaC"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/poblacioC_inscripcio"
+                android:ems="10"
+                android:layout_below="@+id/adrçaC"
+                android:layout_alignLeft="@+id/adrçaC"
+                android:layout_alignStart="@+id/adrçaC"
+                android:id="@+id/poblacio"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/codipostalC_inscripcio"
+                android:ems="10"
+                android:layout_alignTop="@+id/poblacio"
+                android:layout_alignLeft="@+id/poblacio"
+                android:layout_alignStart="@+id/poblacio"
+                android:id="@+id/codipostal"
+                android:maxLength="5"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp" />
+
+            <Button
+                android:text="ENVIAR"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:id="@+id/btnInscripcio"
+                android:layout_marginTop="25dp" />
+
+        </LinearLayout>
+    </ScrollView-->
+
+
+    <WebView
+        android:id="@+id/webViewEscola"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
