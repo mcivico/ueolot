@@ -32,7 +32,7 @@ public class Last_Resultado_Task extends AsyncTask<String, Void, Integer> {
         HttpURLConnection c = null;
         int status = -1;
         try{
-            URL u = new URL("http://www.ueolot.com/app/webservices/last-resultado.php");
+            URL u = new URL("http://www.ueolot.com/app/webservices/last-resultado2.php");
             c = (HttpURLConnection)u.openConnection();
             c.setRequestMethod("GET");
             c.setRequestProperty("Content-length","0");

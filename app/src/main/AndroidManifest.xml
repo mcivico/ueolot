@@ -46,7 +46,13 @@
             android:name=".NotificacionsDetallActivity"
             android:configChanges="screenSize|orientation"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme" >
+
+                <intent-filter>
+                    <action android:name="NotificacionsDetallActivity" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </activity>
 
         <activity android:name=".JugadorDetallActivity"
             android:parentActivityName=".MainActivity"

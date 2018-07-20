@@ -7,5 +7,5 @@ import java.io.Serializable;
  */
 
 public class Resultado implements Serializable {
-    public String team1Descripcion, team1Image, score, team2Descripcion, team2Image;
+    public String team1Descripcion, team1Image, score, team2Descripcion, team2Image,location,mcivico,hora;
 }

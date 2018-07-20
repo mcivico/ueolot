@@ -71,12 +71,13 @@ public class JugadorDetallActivity extends AppCompatActivity {
         num.setText(player.getNumber());
         nom.setText(player.getTitle());
         posicio.setText(player.getPosition());
+        String marcC = "";
         if(player.getCity()==null){
-            neix.setText(UEOlot_helper.formatDate(player.getDate()));
+            marcC = UEOlot_helper.formatDate(player.getDate());
         }else{
-            neix.setText(UEOlot_helper.formatDate(player.getDate())+ " | "+ player.getCity());
+            marcC = player.getDate()+ " | "+ player.getCity();
         }
-
+        neix.setText(marcC);
         txt1.setText("Data i lloc de neixament");
         txt2.setText("Descripció");
         webView.loadDataWithBaseURL(null, UEOlot_helper.getHtmlContent(player.getContent()),mime, encoding,null);

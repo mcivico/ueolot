@@ -106,6 +106,7 @@ public class NoticiesDetallActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+
     /*private class DescarregarImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 

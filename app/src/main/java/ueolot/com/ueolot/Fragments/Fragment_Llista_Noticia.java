@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -40,11 +41,12 @@ import static android.os.Build.VERSION_CODES.M;
 public class Fragment_Llista_Noticia extends Fragment {
 
     private ListView llista_noticies;
-    private TextView ueo,resultat,txtLinia;
+    private TextView ueo,resultat,txtLinia,txtLocation;
     private ImageView team1, team2;
     private Adapter_Noticia adapter_noticia;
     private ProgressDialog dialog;
     private int _imageHeight = 0;
+    private LinearLayout scoreLayout,spaceScore,spaceLocation;
 
     @RequiresApi(api = M)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -57,6 +59,10 @@ public class Fragment_Llista_Noticia extends Fragment {
             team1 = (ImageView) rootview.findViewById(R.id.webViewTeam1);
             txtLinia = (TextView)rootview.findViewById(R.id.txtRes);
             team2 =(ImageView)rootview.findViewById(R.id.webViewTeam2);
+            txtLocation = (TextView)rootview.findViewById(R.id.txtLocation);
+            scoreLayout = (LinearLayout)rootview.findViewById(R.id.UltimaPuntuacio);
+            spaceScore = (LinearLayout)rootview.findViewById(R.id.spaceScore);
+            spaceLocation = (LinearLayout)rootview.findViewById(R.id.spaceLocation);
             ViewTreeObserver viewTreeObserver = rootview.getViewTreeObserver();
             if (viewTreeObserver.isAlive()) {
                 viewTreeObserver
@@ -75,9 +81,8 @@ public class Fragment_Llista_Noticia extends Fragment {
             new Noticies_Task(this).execute();
             //ueo.setText("PARTIT");
             team1.setBackgroundColor(getResources().getColor(R.color.colortRosa2));
-            txtLinia.setText(" - ");
             team2.setBackgroundColor(getResources().getColor(R.color.colortRosa2));
-
+            txtLinia.setText(" - ");
             llista_noticies.setClickable(true);
             llista_noticies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -105,9 +110,33 @@ public class Fragment_Llista_Noticia extends Fragment {
     }
 
     public void carregar_dades2(Resultado resultado) {
-        resultat.setText(resultado.score);
-        Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+resultado.team1Image).into(team1);
-        Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+resultado.team2Image).into(team2);
+        if(resultado != null){
+            scoreLayout.setVisibility(LinearLayout.VISIBLE);
+            spaceScore.setVisibility(LinearLayout.VISIBLE);
+            spaceLocation.setVisibility(LinearLayout.VISIBLE);
+            resultat.setText(resultado.score);
+            txtLocation.setText(resultado.location);
+            if(resultado.team1Descripcion.toUpperCase().contains("OLOT")){
+                Picasso.with(this.getContext()).load(R.mipmap.ic_ueolot_logo).into(team1);
+                Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+resultado.team2Image).into(team2);
+            }else{
+                Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+resultado.team1Image).into(team1);
+                Picasso.with(this.getContext()).load(R.mipmap.ic_ueolot_logo).into(team2);
+            }
+
+        }
+        else{
+            scoreLayout.setVisibility(LinearLayout.GONE);
+            spaceScore.setVisibility(LinearLayout.GONE);
+            spaceLocation.setVisibility(LinearLayout.GONE);
+            resultat.setText("");
+            txtLocation.setText("");
+            team1.setImageDrawable(null);
+            team2.setImageDrawable(null);
+        }
+
+
+
     }
 
     public void hideProgressDialog(){

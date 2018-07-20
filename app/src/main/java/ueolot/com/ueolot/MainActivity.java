@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = MainActivity.class.getSimpleName();
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private TextView txtRegId, txtMessage;
+    private boolean doubleBackToExitPressedOnce = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
     }
 
+
     public Fragment loadFragment(Fragment fragment, String frag){
         if(frag.equals("Cronica")){
             fragment = new Fragment_Llista_Cronica();
@@ -125,6 +128,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+       int mc = getFragmentManager().getBackStackEntryCount();
         if(getFragmentManager().getBackStackEntryCount()==0){
             super.onBackPressed();
         }else if(getFragmentManager().getBackStackEntryCount() == 1) {
@@ -132,6 +136,26 @@ public class MainActivity extends AppCompatActivity
         }else{
             getFragmentManager().popBackStack();
         }
+
+        /*if (doubleBackToExitPressedOnce) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Torna a fer clic enrere per Sortir",
+                Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);*/
     }
 
     @Override

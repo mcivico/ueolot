@@ -50,7 +50,7 @@ public class Adapter_Clasificacio extends BaseAdapter {
             holder = (Vista)convertView.getTag();
         }
 
-        if(dades.get(position).equip.equals("UE OLOT")){
+        if(dades.get(position).equip.toUpperCase().equals("UE OLOT")){
             holder.pos.setTextSize(17);
             holder.pos.setTextColor(context.getResources().getColor(R.color.colortTítols));
             holder.equip.setTextSize(17);

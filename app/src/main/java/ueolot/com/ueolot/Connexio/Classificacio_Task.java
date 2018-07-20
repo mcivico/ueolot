@@ -36,7 +36,7 @@ public class Classificacio_Task extends AsyncTask<String, Void, Integer> {
         HttpURLConnection c = null;
         int status = -1;
         try{
-            URL u = new URL("http://www.ueolot.com/app/webservices/classificacio.php");
+            URL u = new URL("http://www.ueolot.com/app/webservices/classificacio2.php");
             c = (HttpURLConnection)u.openConnection();
             c.setRequestMethod("GET");
             c.setRequestProperty("Content-length","0");
