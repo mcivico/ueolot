@@ -13,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -46,7 +48,9 @@ public class Fragment_Llista_Noticia extends Fragment {
     private Adapter_Noticia adapter_noticia;
     private ProgressDialog dialog;
     private int _imageHeight = 0;
-    private LinearLayout scoreLayout,spaceScore,spaceLocation;
+    private LinearLayout scoreLayout,spaceScore,spaceLocation, dadesPartit,layoutLocation;
+    private Button btnSocis;
+
 
     @RequiresApi(api = M)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -55,6 +59,9 @@ public class Fragment_Llista_Noticia extends Fragment {
         if(comprovarInternet(getContext())){
             llista_noticies = (ListView) rootview.findViewById(R.id.listViewNoticia);
             //ueo = (TextView)rootview.findViewById(R.id.ueo);
+            btnSocis = (Button) rootview.findViewById(R.id.btnPromocioSocis);
+            dadesPartit = (LinearLayout)rootview.findViewById(R.id.UltimaPuntuacio);
+            layoutLocation = (LinearLayout)rootview.findViewById(R.id.spaceLocation);
             resultat = (TextView)rootview.findViewById(R.id.txtRes);
             team1 = (ImageView) rootview.findViewById(R.id.webViewTeam1);
             txtLinia = (TextView)rootview.findViewById(R.id.txtRes);
@@ -94,11 +101,65 @@ public class Fragment_Llista_Noticia extends Fragment {
                     i.putExtra("Noticia",noticia_seleccionada);
                     startActivity(i);
                     getActivity().finish();
+
+                }
+            });
+
+            llista_noticies.setOnScrollListener(new AbsListView.OnScrollListener(){
+                public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                    // TODO Auto-generated method stub
+                }
+                public void onScrollStateChanged(AbsListView view, int scrollState) {
+                    // TODO Auto-generated method stub
+                    final ListView lw = llista_noticies;
+
+                    int pos = llista_noticies.getFirstVisiblePosition();
+                    if(pos == 0){
+                        dadesPartit.setVisibility(View.VISIBLE);
+                        layoutLocation.setVisibility(View.VISIBLE);
+                        /*ViewGroup.LayoutParams params = dadesPartit.getLayoutParams();
+                        params.height = 100;
+                        dadesPartit.setLayoutParams(params);
+                        ViewGroup.LayoutParams params2 = layoutLocation.getLayoutParams();
+                        params.height = 30;
+                        layoutLocation.setLayoutParams(params2);*/
+
+                    }else{
+                        dadesPartit.setVisibility(View.GONE);
+                        layoutLocation.setVisibility(View.GONE);
+                    }
+
+                    /*if (view.getId() == lw.getId()) {
+                        final int currentFirstVisibleItem = lw.getFirstVisiblePosition();
+                       if ((currentFirstVisibleItem < lw.getLastVisiblePosition())&& pos != 0 ) {
+                           dadesPartit.setVisibility(View.GONE);
+                           layoutLocation.setVisibility(View.GONE);
+                           ViewGroup.LayoutParams params = dadesPartit.getLayoutParams();
+                           params.height = 0;
+                           dadesPartit.setLayoutParams(params);
+                           ViewGroup.LayoutParams params2 = layoutLocation.getLayoutParams();
+                           params.height = 0;
+                           layoutLocation.setLayoutParams(params2);
+                       }
+                    }*/
+                }
+            });
+            btnSocis.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    Fragment nextFrag= new Fragment_Soci();
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.content_frame, nextFrag,"findThisFragment")
+                            .addToBackStack(null)
+                            .commit();
                 }
             });
         }else{
             Snackbar.make(rootview,"No hi ha connexió a Internet", Snackbar.LENGTH_LONG).show();
         }
+
 
         return rootview;
     }

@@ -29,6 +29,22 @@
                 android:textStyle="bold" /-->
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnPromocioSocis"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/imatge_socis"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/UltimaPuntuacio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
