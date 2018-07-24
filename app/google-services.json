@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:162308005905:android:2dc19bc113d0024a",
+        "mobilesdk_app_id": "1:162308005905:android:64de57e622abfb97",
         "android_client_info": {
-          "package_name": "com.ueolot"
+          "package_name": "com.ueolot.ueo.ueolot1921"
         }
       },
       "oauth_client": [

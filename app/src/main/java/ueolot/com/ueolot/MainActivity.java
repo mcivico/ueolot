@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity
 
                     String message = intent.getStringExtra("message");
 
-                    Toast.makeText(getApplicationContext(), "Push notification: " + message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "UEO: " + message, Toast.LENGTH_LONG).show();
 
                     txtMessage.setText(message);
                 }
