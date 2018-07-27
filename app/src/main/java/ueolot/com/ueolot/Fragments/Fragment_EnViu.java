@@ -57,7 +57,7 @@ public class Fragment_EnViu extends Fragment {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
                 final SearchTimeline searchTimeline = new SearchTimeline.Builder()
-                        .query("#garrotxa")
+                        .query("#LIVEUEO")
                         .maxItemsPerRequest(50)
                         .build();
 

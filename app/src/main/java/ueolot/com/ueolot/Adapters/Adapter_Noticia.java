@@ -61,7 +61,7 @@ public class Adapter_Noticia extends ArrayAdapter<Noticia> {
         vista.titol.setText(dades.get(position).getTitle());
 
         //Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+dades.get(position).getUrlimatge()+"-768x403.jpg").into(vista.foto);
-        Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+dades.get(position).getUrlimatge()).into(vista.foto);
+        Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+dades.get(position).getUrlimatge()).fit().centerCrop().into(vista.foto);
         /*if(vista.foto.getDrawable() == null){
             Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+dades.get(position).getUrlimatge()+".jpg").into(vista.foto);
         }*/

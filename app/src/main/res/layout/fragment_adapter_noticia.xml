@@ -27,10 +27,10 @@
                 android:layout_weight="0.3">
 
                 <ImageView
-                    android:layout_width="match_parent"
                     android:id="@+id/imagen_single_post_circuito"
-                    android:scaleType="centerCrop"
-                    android:layout_height="150dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:scaleType="centerCrop" />
             </LinearLayout>
 
             <LinearLayout

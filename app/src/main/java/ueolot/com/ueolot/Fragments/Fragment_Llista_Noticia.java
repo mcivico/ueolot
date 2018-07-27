@@ -12,21 +12,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import ueolot.com.ueolot.Adapters.Adapter_Noticia;
 import ueolot.com.ueolot.Connexio.Last_Resultado_Task;
+import ueolot.com.ueolot.Connexio.Next_Resultado_Task;
 import ueolot.com.ueolot.Connexio.Noticies_Task;
 import ueolot.com.ueolot.Model.Noticia;
 import ueolot.com.ueolot.Model.Resultado;
@@ -43,13 +41,14 @@ import static android.os.Build.VERSION_CODES.M;
 public class Fragment_Llista_Noticia extends Fragment {
 
     private ListView llista_noticies;
-    private TextView ueo,resultat,txtLinia,txtLocation;
-    private ImageView team1, team2;
+    private TextView txtUPlocal, txtUPresultat,txtUPvisitan, txtPPlocal, txtPPvisitan, txtPPlloc;
+    //private ImageView team1, team2;
     private Adapter_Noticia adapter_noticia;
     private ProgressDialog dialog;
     private int _imageHeight = 0;
-    private LinearLayout scoreLayout,spaceScore,spaceLocation, dadesPartit,layoutLocation;
+    private LinearLayout  resultatsLayout;
     private Button btnSocis;
+    private ImageButton ibtnSocis;
 
 
     @RequiresApi(api = M)
@@ -58,19 +57,18 @@ public class Fragment_Llista_Noticia extends Fragment {
         final View rootview = inflater.inflate(R.layout.fragment_llista_noticies,container,false);
         if(comprovarInternet(getContext())){
             llista_noticies = (ListView) rootview.findViewById(R.id.listViewNoticia);
-            //ueo = (TextView)rootview.findViewById(R.id.ueo);
-            btnSocis = (Button) rootview.findViewById(R.id.btnPromocioSocis);
-            dadesPartit = (LinearLayout)rootview.findViewById(R.id.UltimaPuntuacio);
-            layoutLocation = (LinearLayout)rootview.findViewById(R.id.spaceLocation);
-            resultat = (TextView)rootview.findViewById(R.id.txtRes);
-            team1 = (ImageView) rootview.findViewById(R.id.webViewTeam1);
-            txtLinia = (TextView)rootview.findViewById(R.id.txtRes);
-            team2 =(ImageView)rootview.findViewById(R.id.webViewTeam2);
-            txtLocation = (TextView)rootview.findViewById(R.id.txtLocation);
-            scoreLayout = (LinearLayout)rootview.findViewById(R.id.UltimaPuntuacio);
-            spaceScore = (LinearLayout)rootview.findViewById(R.id.spaceScore);
-            spaceLocation = (LinearLayout)rootview.findViewById(R.id.spaceLocation);
-            ViewTreeObserver viewTreeObserver = rootview.getViewTreeObserver();
+            ibtnSocis = (ImageButton) rootview.findViewById(R.id.imageButton);
+            resultatsLayout = (LinearLayout)rootview.findViewById(R.id.layoutResultats);
+
+            txtUPlocal = (TextView) rootview.findViewById(R.id.txtUPlocal);
+            txtUPresultat = (TextView) rootview.findViewById(R.id.txtUPresultat);
+            txtUPvisitan = (TextView) rootview.findViewById(R.id.txtUPvisitant);
+
+            txtPPlocal = (TextView) rootview.findViewById(R.id.txtPPlocal);
+            txtPPvisitan = (TextView) rootview.findViewById(R.id.txtPPvisitant);
+            txtPPlloc = (TextView) rootview.findViewById(R.id.txtPPdatahora);
+
+           /* ViewTreeObserver viewTreeObserver = rootview.getViewTreeObserver();
             if (viewTreeObserver.isAlive()) {
                 viewTreeObserver
                         .addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -81,15 +79,12 @@ public class Fragment_Llista_Noticia extends Fragment {
                                 _imageHeight = team1.getHeight();
                             }
                         });
-            }
+            }*/
 
             dialog = ProgressDialog.show(getActivity(),"","Carregant dades...", true);
             new Last_Resultado_Task(this).execute();
+            new Next_Resultado_Task(this).execute();
             new Noticies_Task(this).execute();
-            //ueo.setText("PARTIT");
-            team1.setBackgroundColor(getResources().getColor(R.color.colortRosa2));
-            team2.setBackgroundColor(getResources().getColor(R.color.colortRosa2));
-            txtLinia.setText(" - ");
             llista_noticies.setClickable(true);
             llista_noticies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -115,36 +110,14 @@ public class Fragment_Llista_Noticia extends Fragment {
 
                     int pos = llista_noticies.getFirstVisiblePosition();
                     if(pos == 0){
-                        dadesPartit.setVisibility(View.VISIBLE);
-                        layoutLocation.setVisibility(View.VISIBLE);
-                        /*ViewGroup.LayoutParams params = dadesPartit.getLayoutParams();
-                        params.height = 100;
-                        dadesPartit.setLayoutParams(params);
-                        ViewGroup.LayoutParams params2 = layoutLocation.getLayoutParams();
-                        params.height = 30;
-                        layoutLocation.setLayoutParams(params2);*/
+                        resultatsLayout.setVisibility(View.VISIBLE);
 
                     }else{
-                        dadesPartit.setVisibility(View.GONE);
-                        layoutLocation.setVisibility(View.GONE);
+                        resultatsLayout.setVisibility(View.GONE);
                     }
-
-                    /*if (view.getId() == lw.getId()) {
-                        final int currentFirstVisibleItem = lw.getFirstVisiblePosition();
-                       if ((currentFirstVisibleItem < lw.getLastVisiblePosition())&& pos != 0 ) {
-                           dadesPartit.setVisibility(View.GONE);
-                           layoutLocation.setVisibility(View.GONE);
-                           ViewGroup.LayoutParams params = dadesPartit.getLayoutParams();
-                           params.height = 0;
-                           dadesPartit.setLayoutParams(params);
-                           ViewGroup.LayoutParams params2 = layoutLocation.getLayoutParams();
-                           params.height = 0;
-                           layoutLocation.setLayoutParams(params2);
-                       }
-                    }*/
                 }
             });
-            btnSocis.setOnClickListener(new View.OnClickListener()
+            ibtnSocis.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
@@ -159,8 +132,6 @@ public class Fragment_Llista_Noticia extends Fragment {
         }else{
             Snackbar.make(rootview,"No hi ha connexió a Internet", Snackbar.LENGTH_LONG).show();
         }
-
-
         return rootview;
     }
 
@@ -172,32 +143,19 @@ public class Fragment_Llista_Noticia extends Fragment {
 
     public void carregar_dades2(Resultado resultado) {
         if(resultado != null){
-            scoreLayout.setVisibility(LinearLayout.VISIBLE);
-            spaceScore.setVisibility(LinearLayout.VISIBLE);
-            spaceLocation.setVisibility(LinearLayout.VISIBLE);
-            resultat.setText(resultado.score);
-            txtLocation.setText(resultado.location);
-            if(resultado.team1Descripcion.toUpperCase().contains("OLOT")){
-                Picasso.with(this.getContext()).load(R.mipmap.ic_ueolot_logo).into(team1);
-                Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+resultado.team2Image).into(team2);
-            }else{
-                Picasso.with(this.getContext()).load("http://www.ueolot.com/wp-content/uploads/"+resultado.team1Image).into(team1);
-                Picasso.with(this.getContext()).load(R.mipmap.ic_ueolot_logo).into(team2);
-            }
+            txtUPlocal.setText(resultado.team1Descripcion);
+            txtUPvisitan.setText(resultado.team2Descripcion);
+            txtUPresultat.setText(resultado.score);
 
         }
-        else{
-            scoreLayout.setVisibility(LinearLayout.GONE);
-            spaceScore.setVisibility(LinearLayout.GONE);
-            spaceLocation.setVisibility(LinearLayout.GONE);
-            resultat.setText("");
-            txtLocation.setText("");
-            team1.setImageDrawable(null);
-            team2.setImageDrawable(null);
+    }
+
+    public void carregar_dades3(Resultado resultado) {
+        if(resultado != null){
+            txtPPlocal.setText(resultado.team1Descripcion);
+            txtPPvisitan.setText(resultado.team2Descripcion);
+            txtPPlloc.setText(resultado.location);
         }
-
-
-
     }
 
     public void hideProgressDialog(){
