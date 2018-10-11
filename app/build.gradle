@@ -19,13 +19,13 @@ repositories {
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.2'
     defaultConfig {
         applicationId "ueolot.com.ueolot"
         minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 9
-        versionName "2.2"
+        targetSdkVersion 26
+        versionCode 11
+        versionName "2.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.squareup.picasso:picasso:2.1.1'
     implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.applandeo:material-calendar-view:1.4.0'
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     testImplementation 'junit:junit:4.12'

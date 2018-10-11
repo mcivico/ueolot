@@ -57,7 +57,7 @@ public class Fragment_Llista_Noticia extends Fragment {
         final View rootview = inflater.inflate(R.layout.fragment_llista_noticies,container,false);
         if(comprovarInternet(getContext())){
             llista_noticies = (ListView) rootview.findViewById(R.id.listViewNoticia);
-            ibtnSocis = (ImageButton) rootview.findViewById(R.id.imageButton);
+            //ibtnSocis = (ImageButton) rootview.findViewById(R.id.imageButton);
             resultatsLayout = (LinearLayout)rootview.findViewById(R.id.layoutResultats);
 
             txtUPlocal = (TextView) rootview.findViewById(R.id.txtUPlocal);
@@ -117,7 +117,7 @@ public class Fragment_Llista_Noticia extends Fragment {
                     }
                 }
             });
-            ibtnSocis.setOnClickListener(new View.OnClickListener()
+            /*ibtnSocis.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
@@ -128,7 +128,7 @@ public class Fragment_Llista_Noticia extends Fragment {
                             .addToBackStack(null)
                             .commit();
                 }
-            });
+            });*/
         }else{
             Snackbar.make(rootview,"No hi ha connexió a Internet", Snackbar.LENGTH_LONG).show();
         }

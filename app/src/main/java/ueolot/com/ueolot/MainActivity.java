@@ -128,34 +128,15 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-       int mc = getFragmentManager().getBackStackEntryCount();
+        super.onBackPressed();
+       /*int mc = getFragmentManager().getBackStackEntryCount();
         if(getFragmentManager().getBackStackEntryCount()==0){
             super.onBackPressed();
         }else if(getFragmentManager().getBackStackEntryCount() == 1) {
             moveTaskToBack(false);
         }else{
             getFragmentManager().popBackStack();
-        }
-
-        /*if (doubleBackToExitPressedOnce) {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Torna a fer clic enrere per Sortir",
-                Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);*/
+        }*/
     }
 
     @Override
@@ -167,11 +148,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
